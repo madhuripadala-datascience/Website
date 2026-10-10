@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Savor Notes is a food journal sharing recipes, kitchen stories, and delicious everyday inspiration.">
+  <title>Savor Notes | Food Journal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Savor Notes home"><span class="wordmark-icon">S</span> Savor Notes</a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#stories">Recipes</a>
+      <a href="#about">About</a>
+      <a href="#community">Journal</a>
+      <a href="#booking">Book a table</a>
+      <a href="login.html">Log in</a>
+      <a class="nav-contact" href="#newsletter">Join the table <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow">Fresh favorites & kitchen stories</p>
+        <h1 id="intro-title">Good food begins with a little wonder.</h1>
+        <p class="intro-text">Savor Notes is where recipes, comforting meals, and little culinary experiments come together — simple, joyful, and full of flavor.</p>
+        <div class="cta-row">
+          <a class="primary-button" href="#stories">Browse recipes</a>
+          <a class="secondary-button" href="#newsletter">Subscribe</a>
+        </div>
+        <ul class="mini-stats" aria-label="Food blog highlights">
+          <li><strong>180+</strong><span>recipes</span></li>
+          <li><strong>12</strong><span>weekly ideas</span></li>
+          <li><strong>4.9</strong><span>favorite bites</span></li>
+        </ul>
+      </div>
+      <div class="intro-image-wrap">
+        <img class="intro-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85" alt="Fresh ingredients and a plated meal">
+      </div>
+    </section>
+
+    <section class="food-filter-section" aria-labelledby="food-filter-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Browse by food type</p>
+          <h2 id="food-filter-title">Choose what you want to cook</h2>
+        </div>
+      </div>
+      <div class="food-type-bar" aria-label="Food categories">
+        <button class="filter-button is-active" type="button" data-food-type="all">All</button>
+        <button class="filter-button" type="button" data-food-type="pasta">Pasta</button>
+        <button class="filter-button" type="button" data-food-type="dessert">Desserts</button>
+        <button class="filter-button" type="button" data-food-type="comfort">Comfort food</button>
+        <button class="filter-button" type="button" data-food-type="fresh">Fresh bowls</button>
+      </div>
+    </section>
+
+    <section class="spotlight" id="food-spotlight" aria-live="polite">
+      <p class="eyebrow">Featured food type</p>
+      <h2 id="spotlight-title">Everything on the table</h2>
+      <p id="spotlight-text">Explore warm pasta, sweet treats, and cozy comfort meals with a little flavor in every bite.</p>
+    </section>
+
+    <section class="stories-section" id="stories" aria-labelledby="stories-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">From the kitchen</p>
+          <h2 id="stories-title">Recent recipes & notes</h2>
+        </div>
+        <p class="section-aside">A few favorite ideas for cozy dinners, sweet treats, and slow weekend meals.</p>
+      </div>
+
+      <form class="add-post-form" id="add-post-form">
+        <label for="post-caption">Caption</label>
+        <input id="post-caption" name="caption" type="text" maxlength="120" placeholder="Write a short caption">
+        <label for="post-media">Choose food photos or videos</label>
+        <input id="post-media" name="media" type="file" accept="image/*,video/*" multiple required>
+        <button class="add-post-button" type="submit">Add Post</button>
+        <p class="post-message" id="post-message" aria-live="polite">Your posts are only shown in this browser session.</p>
+      </form>
+
+      <div class="story-grid">
+        <article class="story story-featured" data-food-type="pasta" data-category="recipe">
+          <a class="story-image-link" href="#story-one" aria-label="Read Crispy lemon herb pasta">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1000&q=85" alt="Fresh pasta with herbs and lemon" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Pasta</span><span>Weeknight dinner</span></div>
+          <h3 id="story-one"><a href="#about">Crispy lemon herb pasta</a></h3>
+          <p>A bright, comforting bowl packed with citrus flavor, garlic, and a little crunch in every bite.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="dessert" data-category="inspiration">
+          <a class="story-image-link" href="#story-two" aria-label="Read Slow Sunday baking">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85" alt="Freshly baked sweet pastries" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Dessert</span><span>Weekend ritual</span></div>
+          <h3 id="story-two"><a href="#about">Slow Sunday baking</a></h3>
+          <p>There is nothing better than warm cinnamon, golden crusts, and a kitchen full of gentle smells.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="comfort" data-category="meal">
+          <a class="story-image-link" href="#story-three" aria-label="Read Cozy soup night">
+            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85" alt="A comforting bowl of soup and bread" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Comfort food</span><span>Kitchen journal</span></div>
+          <h3 id="story-three"><a href="#about">Cozy soup night</a></h3>
+          <p>Simple ingredients, slow simmering, and a bowl that feels like a warm hug after a long day.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="fresh" data-category="salad">
+          <a class="story-image-link" href="#story-four" aria-label="Read Citrus grain bowl">
+            <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=900&q=85" alt="Fresh grain bowl with greens and vegetables" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Fresh bowls</span><span>Lunch favorite</span></div>
+          <h3 id="story-four"><a href="#about">Citrus grain bowl</a></h3>
+          <p>Crunchy greens, zesty dressing, and a satisfying mix of textures that feel bright and nourishing.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="pasta" data-category="pasta">
+          <a class="story-image-link" href="#story-five" aria-label="Read Roasted tomato rigatoni">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=85" alt="Roasted tomato pasta served in a bowl" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Pasta</span><span>Sunday supper</span></div>
+          <h3 id="story-five"><a href="#about">Roasted tomato rigatoni</a></h3>
+          <p>Sweet roasted tomatoes and silky sauce turn a simple pasta night into something deeply craveable.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="dessert" data-category="sweet">
+          <a class="story-image-link" href="#story-six" aria-label="Read Honey almond cake">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85" alt="Delicious layered cake with fruit and cream" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Dessert</span><span>Sweet finish</span></div>
+          <h3 id="story-six"><a href="#about">Honey almond cake</a></h3>
+          <p>Soft crumb, floral sweetness, and toasted nuts make this an easy favorite for gatherings and quiet evenings alike.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="fresh" data-category="bowl">
+          <a class="story-image-link" href="#story-seven" aria-label="Read Garden poke bowl">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Colorful fresh poke bowl with vegetables and grains" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Fresh bowls</span><span>Healthy pick</span></div>
+          <h3 id="story-seven"><a href="#about">Garden poke bowl</a></h3>
+          <p>Bright greens, crisp vegetables, and a savory punch of sauce keep every bite lively and refreshing.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="comfort" data-category="pizza">
+          <a class="story-image-link" href="#story-eight" aria-label="Read Fire-roasted pizza night">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85" alt="Freshly baked pizza topped with vegetables and cheese" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Comfort food</span><span>Friday fave</span></div>
+          <h3 id="story-eight"><a href="#about">Fire-roasted pizza night</a></h3>
+          <p>Charred edges, bubbling cheese, and sweet tomatoes make a homemade pizza feel instantly special.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+
+        <article class="story" data-food-type="fresh" data-category="seafood">
+          <a class="story-image-link" href="#story-nine" aria-label="Read Citrus salmon plate">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=85" alt="Citrus salmon with vegetables and rice" loading="lazy">
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="story-meta"><span>Fresh plates</span><span>Protein pick</span></div>
+          <h3 id="story-nine"><a href="#about">Citrus salmon plate</a></h3>
+          <p>Flaky salmon, a bright glaze, and a few crisp sides bring balance and richness to the plate.</p>
+          <button class="like-button" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> <span class="like-label">Save this recipe</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-mark" aria-hidden="true">✦</div>
+      <div class="about-copy">
+        <p class="eyebrow">About Savor Notes</p>
+        <h2 id="about-title">Cooking is comfort, creativity, and joy rolled into one.</h2>
+        <p>Savor Notes is a food journal built around everyday recipes, slow meals, and the little kitchen moments that make home feel special. Every post celebrates flavor, freshness, and recipes worth repeating.</p>
+        <div class="about-badges" aria-label="Highlights">
+          <span>Home cooking</span>
+          <span>Recipe journal</span>
+          <span>Kitchen stories</span>
+        </div>
+        <a class="text-link" href="#newsletter">Get in touch</a>
+      </div>
+      <div class="about-image-wrap">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85" alt="A chef preparing a fresh meal in a bright kitchen" loading="lazy">
+      </div>
+    </section>
+
+    <section class="community-section" id="community" aria-labelledby="community-title">
+      <div class="section-heading community-heading">
+        <div>
+          <p class="eyebrow">Journal</p>
+          <h2 id="community-title">A table full of good ideas.</h2>
+        </div>
+      </div>
+      <div class="community-grid">
+        <article class="community-card">
+          <span class="community-tag">Meal ideas</span>
+          <h3>Easy weeknights</h3>
+          <p>Simple, flavorful dinners designed for busy evenings and happy leftovers.</p>
+        </article>
+        <article class="community-card accent-card">
+          <span class="community-tag">Kitchen rituals</span>
+          <h3>Weekend baking</h3>
+          <p>Comforting recipes and sweet treats perfect for slow mornings and shared company.</p>
+        </article>
+        <article class="community-card">
+          <span class="community-tag">Fresh finds</span>
+          <h3>Seasonal bites</h3>
+          <p>Recipes inspired by what is in season, colorful, and bursting with freshness.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking" aria-labelledby="booking-title">
+      <div class="booking-copy">
+        <p class="eyebrow">Dining reservation</p>
+        <h2 id="booking-title">Book your favorite table.</h2>
+        <p>Reserve a cozy corner for your next lunch date, date night, or family gathering.</p>
+        <ul class="booking-notes">
+          <li>Chef-special tasting menu</li>
+          <li>Indoor & terrace seating</li>
+          <li>Vegan, vegetarian, and gluten-free options</li>
+        </ul>
+      </div>
+
+      <form class="booking-form" id="booking-form">
+        <label>
+          Guest name
+          <input type="text" name="guestName" placeholder="Your name" required>
+        </label>
+        <label>
+          Phone number
+          <input type="tel" name="phone" placeholder="(555) 123-4567" required>
+        </label>
+        <label>
+          Date
+          <input type="date" name="date" required>
+        </label>
+        <label>
+          Time slot
+          <select name="time" required>
+            <option value="">Choose a time</option>
+            <option>12:30 PM</option>
+            <option>1:30 PM</option>
+            <option>6:30 PM</option>
+            <option>7:30 PM</option>
+            <option>8:30 PM</option>
+          </select>
+        </label>
+        <label>
+          Guests
+          <select name="guests" required>
+            <option value="">Party size</option>
+            <option>2 guests</option>
+            <option>4 guests</option>
+            <option>6 guests</option>
+            <option>8 guests</option>
+          </select>
+        </label>
+        <button class="primary-button" type="submit">Reserve a table</button>
+        <p class="booking-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div>
+        <p class="eyebrow">Newsletter</p>
+        <h2 id="newsletter-title">Stay close to the table</h2>
+        <p>Get a note whenever a new recipe, kitchen story, or seasonal favorite is published.</p>
+      </div>
+      <form class="newsletter-form">
+        <label class="visually-hidden" for="email-address">Your email address</label>
+        <input id="email-address" name="email" type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+        <p class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#home"><span class="wordmark-icon">S</span> Savor Notes</a>
+    <p>Thanks for visiting the journal.</p>
+    <a class="back-to-top" href="#home">Back to top ↑</a>
+    <p class="copyright">© <span id="year"></span> Savor Notes</p>
+  </footer>
+</body>
+</html>
